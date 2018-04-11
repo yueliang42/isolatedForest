@@ -127,7 +127,7 @@ def svm_train(vecs, y):
     #clf = SVC(kernel='rbf', verbose=True)
     #clf.fit(x_train, y_train)
     x_train = vecs
-    clf = IsolationForest(n_estimators=100,n_jobs=-1, verbose=2,contamination=0.1)
+    clf = IsolationForest(n_estimators=100,n_jobs=-1, verbose=2,contamination=0.01)
     clf.fit(x_train)
 
     joblib.dump(clf, './isoForest_data/isoForest_model/isoForest_model.pkl')
